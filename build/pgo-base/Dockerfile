@@ -59,8 +59,6 @@ RUN if  [ "$BASEOS" = "ubi8" ]; then \
     && ${PACKAGER} -qy module disable postgresql ; \
 fi
 
-# Crunchy PostgreSQL repository
-# Seeing what happens if this is not used
-#ADD conf/RPM-GPG-KEY-crunchydata* /
-#ADD conf/crunchypg${PGVERSION}.repo /etc/yum.repos.d/
-#RUN rpm --import RPM-GPG-KEY-crunchydata*
+ADD conf/RPM-GPG-KEY-crunchydata* /
+ADD conf/crunchypg${PGVERSION}.repo /etc/yum.repos.d/
+RUN rpm --import RPM-GPG-KEY-crunchydata*
