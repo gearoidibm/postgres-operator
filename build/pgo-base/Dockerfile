@@ -60,6 +60,7 @@ RUN if  [ "$BASEOS" = "ubi8" ]; then \
 fi
 
 # Crunchy PostgreSQL repository
-ADD conf/RPM-GPG-KEY-crunchydata* /
-ADD conf/crunchypg${PGVERSION}.repo /etc/yum.repos.d/
-RUN rpm --import RPM-GPG-KEY-crunchydata*
+# Seeing what happens if this is not used
+#ADD conf/RPM-GPG-KEY-crunchydata* /
+#ADD conf/crunchypg${PGVERSION}.repo /etc/yum.repos.d/
+#RUN rpm --import RPM-GPG-KEY-crunchydata*
